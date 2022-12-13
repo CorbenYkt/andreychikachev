@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/andreychikachev/static/css/main.024055f3.css",
+    "main.js": "/andreychikachev/static/js/main.d4cc1ac2.js",
+    "index.html": "/andreychikachev/index.html",
+    "main.024055f3.css.map": "/andreychikachev/static/css/main.024055f3.css.map",
+    "main.d4cc1ac2.js.map": "/andreychikachev/static/js/main.d4cc1ac2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.024055f3.css",
+    "static/js/main.d4cc1ac2.js"
+  ]
+}
