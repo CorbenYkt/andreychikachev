@@ -1,0 +1,33 @@
+.App {
+    display: block;
+    flex-direction: column;
+    background-color: #F5F5F5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.nav {
+    align-items: center;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+h1 {
+    color: #515C81;
+    text-align: center;
+}
+
+.shadowed {
+    color: gray;
+}
+
+.toright {
+    text-align: right;
+    margin-right: 20pt;
+}
+
+a {
+    text-decoration: none
+}
+
+;
