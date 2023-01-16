@@ -1,23 +1,45 @@
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import Style from './Navbar.module.scss';
+import { Link, useLocation } from "react-router-dom";
+import { Box } from "@mui/material";
 
-const Header = () => {
+const links = [
+    {
+        name: 'Галерея',
+        to: '/gallery',
+        active: 'gallery'
+    },
+    {
+        name: 'Портреты',
+        to: '/portraits',
+        active: 'portraits'
+    },
+    {
+        name: 'О художнике',
+        to: '/about',
+        active: 'about'
+    },
+    {
+        name: 'Контакты',
+        to: '/contacts',
+        active: 'contacts'
+    },
+
+]
+
+export default function Header() {
     return (
-        <div>
-            <h1>Fozzy's Family!</h1>
-            <ul className="nav">
-                <li>
-                    <Link to='/fozzy'>Me</Link>
-                </li>
-                <li>
-                    <Link to='/about'>Mommy</Link>
-                </li>
-                <li>
-                    <Link to='/profile'>Father&Bro</Link>
-                </li>
-            </ul>
-        </div>
+
+        <Box component={'ul'} width={'100%'} height={'100%'} display={'flex'} justifyContent={'center'}
+            columnGap={'1.2em'}
+            fontSize={'1rem'} paddingBottom={10}>
+            {links.map((link, index) => (
+                <Box key={index} component={'li'}>
+                    <Link to={link.to}>
+                        <p>{link.name}</p>
+                    </Link>
+                </Box>
+            ))}
+        </Box>
     );
 };
-
-
-export default Header;
