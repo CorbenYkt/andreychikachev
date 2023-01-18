@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Style from './Navbar.module.scss';
 import { Link, useLocation } from "react-router-dom";
 import { Box } from "@mui/material";
 
@@ -32,7 +31,7 @@ export default function Header() {
 
         <Box component={'ul'} width={'100%'} height={'100%'} display={'flex'} justifyContent={'center'}
             columnGap={'1.2em'}
-            fontSize={'1rem'} paddingBottom={10}>
+            fontSize={'1rem'} paddingBottom={4}>
             {links.map((link, index) => (
                 <Box key={index} component={'li'}>
                     <Link to={link.to}>

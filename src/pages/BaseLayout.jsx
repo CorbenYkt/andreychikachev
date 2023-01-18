@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import { Box, Grid, Link } from "@mui/material";
+import Style from './Navbar.module.scss';
+
+import { Box, Grid } from "@mui/material";
+import { Link, useLocation } from "react-router-dom";
+import logo from './/img/logo.png';
+
 import Header from './Header';
 import Home from './Home';
 import Gallery from './Gallery';
@@ -9,17 +14,14 @@ import About from './About';
 import Contacts from './Contacts';
 import PageNotFound from './PageNotFound';
 import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-import { Dict } from './langRU.json';
+
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-
-// const translations = {
-//     'en': () => import('./langEN.json'),
-//     'ru': () => import('./langRU.json')
-//   };
+import { useCookies } from 'react-cookie';
+import { useTranslation } from "react-i18next";
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
     width: 28,
@@ -62,38 +64,56 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
         boxSizing: 'border-box',
     },
 }));
+
 export default function BaseLayout() {
-    // if (isMobile) {
-    //     //console.log('isMobile');
-    // }
+    const { t, i18n } = useTranslation();
     const [isStatus, setStatus] = useState(false);
 
     const buttonHandler = () => {
         setStatus((status) => !status);
-        console.log(isStatus);
+
+        if (isStatus) {
+            i18n.changeLanguage('ru');
+
+        } else {
+            i18n.changeLanguage('en');
+
+        }
+
+
+
     };
 
     return (
-
         <Grid container display={'flex'} flexDirection={'column'}
             justifyContent={'space-between'}>
-            <Grid item>
 
-                <Grid item p={5}
+            <Grid item>
+                <Grid item p={2}
                     container
                     direction="row"
                     justifyContent="flex-end"
-                    alignItems="center"
-                >
+                    alignItems="center">
                     <Stack direction="row" spacing={1} alignItems="center">
-                        <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Eng</Typography>
-                        <AntSwitch inputProps={{ 'aria-label': 'ant design' }} onChange={buttonHandler} checked={isStatus} />
                         <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Ru</Typography>
+                        <AntSwitch inputProps={{ 'aria-label': 'ant design' }} onChange={buttonHandler} />
+                        <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Eng</Typography>
                     </Stack>
                 </Grid>
-                <Header></Header>
             </Grid>
-            <Grid item flexGrow={1}>
+
+            <Grid item flexGrow={1} paddingLeft={24} paddingRight={24}>
+                <Container fixed>
+                    <Box sx={{ textAlign: 'center', position: 'relative' }}>
+                        <a href={useLocation().pathname}>
+                            <img src={logo} alt="Logo" width={'300px'} />
+                        </a>
+                    </Box>
+
+                </Container >
+
+                <Header></Header>
+
                 <Routes>
                     <Route index path={'andreychikachev'} element={<Home />} />
                     <Route exact path={'gallery'} element={<Gallery />} />
@@ -103,13 +123,15 @@ export default function BaseLayout() {
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </Grid>
+
             <Grid item>
                 <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                    py={'3rem'} sx={{ opacity: 0.7, fontSize: '1rem' }}>
-                    <Link href={'https://github.com/corbenykt'} underline="hover" color={'white'}>
+                    py={'3rem'} sx={{ opacity: 0.8, fontSize: '1rem' }}>
+                    <Link href={'https://github.com/corbenykt'} color={'white'}>
                         By Dmitrii Artemev
                     </Link>
-                    <p>&copy; 2023</p></Box>
+                    <p>&copy; 2023</p>
+                </Box>
             </Grid>
         </Grid >
     )

@@ -1,9 +1,9 @@
 h1 {
-  font-size: 2rem;
+  font-size: 1rem;
   text-align: center;
 
   @media only screen and (min-width: 940px) {
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: left;
   }
 }
@@ -29,14 +29,6 @@ h3 {
 
 }
 
-.hand {
-  animation-name: wave;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
-
 a {
   font-weight: bold;
   color: rgba(77, 30, 15, 1);
@@ -44,40 +36,6 @@ a {
 }
 
 a:hover {
-  color: lightgrey;
+  color: white;
   transition: color 400ms ease;
-}
-
-@keyframes wave {
-  0% {
-    transform: rotate(0.0deg)
-  }
-
-  10% {
-    transform: rotate(14.0deg)
-  }
-
-  20% {
-    transform: rotate(-8.0deg)
-  }
-
-  30% {
-    transform: rotate(14.0deg)
-  }
-
-  40% {
-    transform: rotate(-4.0deg)
-  }
-
-  50% {
-    transform: rotate(10.0deg)
-  }
-
-  60% {
-    transform: rotate(0.0deg)
-  }
-
-  100% {
-    transform: rotate(0.0deg)
-  }
 }

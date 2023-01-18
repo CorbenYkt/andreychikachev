@@ -6,13 +6,14 @@ import { Link, useLocation } from "react-router-dom";
 
 export function Home() {
   return (
-    <Container fixed>
-      <Box sx={{ textAlign: 'center', position: 'relative' }}>
-        <a href={useLocation().pathname}>
-          <img src={logo} alt="Logo" width={'300px'} />
-        </a>
-      </Box>
-    </Container >
+    // <Container fixed>
+    //   <Box sx={{ textAlign: 'center', position: 'relative' }}>
+    //     <a href={useLocation().pathname}>
+    //       <img src={logo} alt="Logo" width={'300px'} />
+    //     </a>
+    //   </Box>
+    // </Container >
+    <p></p>
   )
 }
 
