@@ -16,5 +16,5 @@ i18next.use(initReactI18next).init({
     debug: true,
     fallbackLng: 'ru',
     resources,
-    lng:'ru'
+    lng: 'ru'
 })

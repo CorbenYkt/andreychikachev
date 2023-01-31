@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Route, Routes } from "react-router-dom";
-import Style from './Navbar.module.scss';
-
 import { Box, Grid } from "@mui/material";
-import { Link, useLocation } from "react-router-dom";
-import logo from './/img/logo.png';
+import logo from './img/logo.png';
 
 import Header from './Header';
 import Home from './Home';
@@ -12,15 +9,14 @@ import Gallery from './Gallery';
 import Portraits from './Portraits';
 import About from './About';
 import Contacts from './Contacts';
+import Emailsended from './Emailsended';
+import Emailerror from './Emailerror';
 import PageNotFound from './PageNotFound';
-import { BrowserView, MobileView, isBrowser, isMobile } from 'react-device-detect';
-
 import Switch from '@mui/material/Switch';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import { styled } from '@mui/material/styles';
 import Container from '@mui/material/Container';
-import { useCookies } from 'react-cookie';
 import { useTranslation } from "react-i18next";
 
 const AntSwitch = styled(Switch)(({ theme }) => ({
@@ -66,7 +62,7 @@ const AntSwitch = styled(Switch)(({ theme }) => ({
 }));
 
 export default function BaseLayout() {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const [isStatus, setStatus] = useState(false);
 
     const buttonHandler = () => {
@@ -74,14 +70,9 @@ export default function BaseLayout() {
 
         if (isStatus) {
             i18n.changeLanguage('ru');
-
         } else {
             i18n.changeLanguage('en');
-
         }
-
-
-
     };
 
     return (
@@ -95,18 +86,18 @@ export default function BaseLayout() {
                     justifyContent="flex-end"
                     alignItems="center">
                     <Stack direction="row" spacing={1} alignItems="center">
-                        <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Ru</Typography>
+                        <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Рус</Typography>
                         <AntSwitch inputProps={{ 'aria-label': 'ant design' }} onChange={buttonHandler} />
                         <Typography color={'#EFEFEF'} fontSize={'0.8rem'}>Eng</Typography>
                     </Stack>
                 </Grid>
             </Grid>
 
-            <Grid item flexGrow={1} paddingLeft={24} paddingRight={24}>
+            <Grid item flexGrow={1} paddingLeft={2} paddingRight={4} xs={12}>
                 <Container fixed>
                     <Box sx={{ textAlign: 'center', position: 'relative' }}>
-                        <a href={useLocation().pathname}>
-                            <img src={logo} alt="Logo" width={'300px'} />
+                        <a href='../'>
+                            <img src={logo} alt="Logo" width={'320px'} />
                         </a>
                     </Box>
 
@@ -115,21 +106,24 @@ export default function BaseLayout() {
                 <Header></Header>
 
                 <Routes>
-                    <Route index path={'andreychikachev'} element={<Home />} />
-                    <Route exact path={'gallery'} element={<Gallery />} />
-                    <Route exact path={'portraits'} element={<Portraits />} />
-                    <Route exact path={'about'} element={<About />} />
-                    <Route exact path={'contacts'} element={<Contacts />} />
+                    <Route index path={'/'} element={<Home />} />
+                    <Route exact path={'/gallery'} element={<Gallery />} />
+                    <Route exact path={'/portraits'} element={<Portraits />} />
+                    <Route exact path={'/about'} element={<About />} />
+                    <Route exact path={'/contacts'} element={<Contacts />} />
+                    <Route exact path={'/emailsended'} element={<Emailsended />} />
+                    <Route exact path={'/emailerror'} element={<Emailerror />} />
+
                     <Route path="*" element={<PageNotFound />} />
                 </Routes>
             </Grid>
 
             <Grid item>
                 <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
-                    py={'3rem'} sx={{ opacity: 0.8, fontSize: '1rem' }}>
-                    <Link href={'https://github.com/corbenykt'} color={'white'}>
+                    py={'3rem'} sx={{ opacity: 0.8, fontSize: '1rem' }} className={'author'}>
+                    <a href={'https://github.com/corbenykt'} style={{ color: 'white', fontWeight:'normal' }} >
                         By Dmitrii Artemev
-                    </Link>
+                    </a>
                     <p>&copy; 2023</p>
                 </Box>
             </Grid>

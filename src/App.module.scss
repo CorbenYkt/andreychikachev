@@ -1,18 +1,14 @@
 html,
 body,
-#reactapp,
-.App {
-    height: 100%;
+#app,
+#app>div {
+    height: 100%
 }
 
-.App {
-    display: flex;
-}
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.5vh;
-
     color: white;
     background-image: url('./pages/img/origin.jpg');
     background-attachment: fixed;
@@ -43,10 +39,24 @@ a:hover,
 a:visited,
 a:active {
     text-decoration: none;
-    color: rgba(77,30,15,1);
+    color: rgba(77, 30, 15, 1);
 }
 
 ul {
     list-style-type: none;
 }
 
+a {
+    font-weight: bold;
+    color: rgba(77, 30, 15, 1);
+    transition: color 200ms ease;
+}
+
+a:hover {
+    color: white;
+    transition: color 400ms ease;
+}
+
+.author {
+    color: red;
+}

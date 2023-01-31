@@ -1,7 +1,6 @@
-import { textAlign } from "@mui/system";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
-import { Box, Grid, Link } from "@mui/material";
+import { Box } from "@mui/material";
 import Avatar from './img/photo.jpg';
 
 export default function About() {
