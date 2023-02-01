@@ -3,7 +3,6 @@ import MyGallery from "react-photo-gallery";
 import photos from "./mGallery";
 import Carousel, { Modal, ModalGateway } from "react-images";
 import { useTranslation } from "react-i18next";
-import { letterSpacing } from "@mui/system";
 
 export default function Gallery() {
     const [currentImage, setCurrentImage] = useState(0);
@@ -18,7 +17,7 @@ export default function Gallery() {
         setCurrentImage(0);
         setViewerIsOpen(false);
     };
-    const { t, i18n } = useTranslation();
+    const { t } = useTranslation();
     return (<div>
         <MyGallery photos={photos} onClick={openLightbox} targetRowHeight={200} />
         <ModalGateway>

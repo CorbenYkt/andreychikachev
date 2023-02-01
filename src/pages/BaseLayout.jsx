@@ -121,7 +121,7 @@ export default function BaseLayout() {
             <Grid item>
                 <Box component={'footer'} display={'flex'} flexDirection={'column'} alignItems={'center'}
                     py={'3rem'} sx={{ opacity: 0.8, fontSize: '1rem' }} className={'author'}>
-                    <a href={'https://github.com/corbenykt'} style={{ color: 'white', fontWeight:'normal' }} >
+                    <a href={'https://github.com/corbenykt'} style={{ color: '#EEEEEE', fontWeight: 'normal', textDecorationLine: '' }} >
                         By Dmitrii Artemev
                     </a>
                     <p>&copy; 2023</p>

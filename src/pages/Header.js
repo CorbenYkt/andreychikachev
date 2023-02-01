@@ -5,12 +5,8 @@ import { useTranslation } from "react-i18next";
 
 export default function Header() {
     const { t } = useTranslation();
-
     return (
-
-        <Box component={'ul'} display={'flex'} justifyContent={'center'}
-            columnGap={'1em'}
-            fontSize={'1rem'} paddingBottom={2}>
+        <Box component={'ul'} display={'flex'} justifyContent={'center'} columnGap={'1em'} fontSize={'1rem'} paddingBottom={2}>
             <Link to={'/gallery'}>
                 <p>{t('section.part1')}</p>
             </Link>
@@ -24,6 +20,5 @@ export default function Header() {
                 <p>{t('section.part4')}</p>
             </Link>
         </Box>
-
     );
 };
