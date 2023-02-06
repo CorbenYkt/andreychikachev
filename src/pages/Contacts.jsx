@@ -12,15 +12,16 @@ export function Contacts() {
   const sendEmail = (e) => {
     e.preventDefault();
     handleToggle();
+
     emailjs.sendForm('service_q08qzr9', 'template_hyltpc3', form.current, 'ZTh-YEaBqy6GzkrBC')
       .then((result) => {
         if (result.text === "OK") {
           setOpen(false);
-          window.location.href = './emailsended';
+          window.location.href = './';
         }
       }, (error) => {
-        window.location.href = './emailerror';
-        //console.log(error.text);
+        //window.location.href = './emailerror';
+        console.log(error.text);
       });
   };
 

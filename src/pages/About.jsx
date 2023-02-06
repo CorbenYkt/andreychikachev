@@ -74,6 +74,7 @@ export default function About() {
             <p>{t('about.part57')}</p>
             <p>{t('about.part58')}</p>
             <p>{t('about.part59')}</p>
+            <p>{t('about.part60')}</p>
 
           </Box>
         </Box>
