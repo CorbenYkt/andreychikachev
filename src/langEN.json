@@ -162,9 +162,10 @@
     "contacts": {
         "part1": "Contacts",
         "part2": "You can contact us by phone +79141036530, or write to us at chikavik@rambler.ru",
-        "part3": "Enter email",
-        "part4": "Your text",
-        "part5": "Send"
+        "part3": "We in Instagram",
+        "part4": "Enter email",
+        "part5": "Your text",
+        "part6": "Send"
     },
     "emailsended": {
         "part1": "Your message has been sent!",

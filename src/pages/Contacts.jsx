@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import emailjs from '@emailjs/browser';
 import Backdrop from '@mui/material/Backdrop';
 import CircularProgress from '@mui/material/CircularProgress';
+import { AiOutlineInstagram } from "react-icons/ai";
 
 export function Contacts() {
   const { t } = useTranslation();
@@ -41,7 +42,12 @@ export function Contacts() {
           <h1>{t('contacts.part1')}</h1>
           <form ref={form} onSubmit={sendEmail}>
             <Typography gutterBottom color="white" variant="body2" component="p">{t('contacts.part2')}</Typography>
-            <TextField type='email' name="user_email" variant="outlined" placeholder={t('contacts.part3')} sx={{ input: { color: 'white' } }} fullWidth required></TextField>
+            <div style={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap' }}>
+              <AiOutlineInstagram size={'24px'}>
+              </AiOutlineInstagram><a href="https://www.instagram.com/c.an.vas/" style={{ color: '#EEEEEE', fontWeight: 'normal', textDecorationLine: '' }} target="_blank" rel="noreferrer">{t('contacts.part3')}</a>
+            </div>
+            <br></br>
+            <TextField type='email' name="user_email" variant="outlined" placeholder={t('contacts.part4')} sx={{ input: { color: 'white' } }} fullWidth required></TextField>
             <br></br><br></br>
             <TextField name="message" variant="outlined" placeholder={t('contacts.part4')} inputProps={{ style: { color: "white" } }}
               multiline rows={5} fullWidth required></TextField>
