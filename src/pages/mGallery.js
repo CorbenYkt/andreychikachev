@@ -406,6 +406,18 @@ const photos = [
     title: "gallery.part68",
     width: 3,
     height: 3
+  },
+  {
+    src: process.env.PUBLIC_URL + "/gallery/photo69.jpg",
+    title: "gallery.part69",
+    width: 3,
+    height: 3
+  },
+  {
+    src: process.env.PUBLIC_URL + "/gallery/photo70.jpg",
+    title: "gallery.part70",
+    width: 4,
+    height: 3
   }
 ];
 export default photos;
