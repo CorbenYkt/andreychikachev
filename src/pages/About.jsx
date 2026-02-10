@@ -11,8 +11,7 @@ export default function About() {
         sx={{ boxShadow: '0 0 20px black', textIndent: '15px', textAlign: 'justify', fontSize: '1rem', backgroundColor: '#645452', paddingLeft: 2, paddingRight: 2 }}>
         <Box component={'main'} display={'flex'} flexDirection={{ xs: 'column', md: 'row' }} alignItems={'center'}
           justifyContent={'center'}>
-          <Box py={2}>
-
+          <Box py={4}>
             <img src={Avatar} alt="Logo" width={'300px'} style={{ 'float': 'left', 'margin': '5px 15px 0 0' }} />
             <h1>{t('about.bio')}</h1>
             {t('about.part1')}
@@ -78,6 +77,9 @@ export default function About() {
             <p>{t('about.part61')}</p>
             <p>{t('about.part62')}</p>
             <p>{t('about.part63')}</p>
+            <p>{t('about.part64')}</p>
+            <p>{t('about.part65')}</p>
+            <p>{t('about.part66')}</p>
           </Box>
         </Box>
       </Box >
